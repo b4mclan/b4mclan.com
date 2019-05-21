@@ -1,5 +1,7 @@
 @import url("font-awesome.min.css");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,600");
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Courgette&display=swap');
 
 /*
 	Prologue by HTML5 UP
@@ -53,6 +55,10 @@ table {
 
 body {
 	-webkit-text-size-adjust: none;
+}
+
+headermain {
+	font-family: 'Permanent Marker', cursive;
 }
 
 mark {
@@ -2199,7 +2205,8 @@ input, select, textarea {
 
 			#main > section.dark {
 				color: #ddd;
-				color: rgba(255, 255, 255, 0.75);
+				color: rgba(255, 255, 255, 100);
+                font-family: 'Courgette', cursive;
 			}
 
 				#main > section.dark h2, #main > section.dark h3, #main > section.dark h4, #main > section.dark h5, #main > section.dark h6 {
@@ -2209,6 +2216,7 @@ input, select, textarea {
 				#main > section.dark strong {
 					color: #fff;
 					border-color: inherit;
+                    font-family: 'Permanent Marker', cursive;
 				}
 
 				#main > section.dark a {
