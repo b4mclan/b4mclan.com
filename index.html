@@ -87,20 +87,20 @@
         window.N2PRO = 1;
         window.N2GSAP = 1;
         window.N2PLATFORM = "wordpress";
-        (function () {
+        (function() {
             var N = this;
             N.N2_ = N.N2_ || {
                 r: [],
                 d: []
-            }, N.N2R = N.N2R || function () {
+            }, N.N2R = N.N2R || function() {
                 N.N2_.r.push(arguments)
-            }, N.N2D = N.N2D || function () {
+            }, N.N2D = N.N2D || function() {
                 N.N2_.d.push(arguments)
             }
         }).call(window);
         if (!window.n2jQuery) {
             window.n2jQuery = {
-                ready: function (cb) {
+                ready: function(cb) {
                     console.error('n2jQuery will be deprecated!');
                     N2R(['$'], cb);
                 }
@@ -108,9 +108,9 @@
         }
         window.nextend = {
             localization: {},
-            ready: function (cb) {
+            ready: function(cb) {
                 console.error('nextend.ready will be deprecated!');
-                N2R('documentReady', function ($) {
+                N2R('documentReady', function($) {
                     cb.call(window, $)
                 })
             }
@@ -118,17 +118,17 @@
         window.N2SSPRO = 1;
         window.N2SS3C = "smartslider3";
         nextend.fontsLoaded = false;
-        nextend.fontsLoadedActive = function () {
+        nextend.fontsLoadedActive = function() {
             nextend.fontsLoaded = true;
         };
         var fontData = {
             google: {
                 families: ["Roboto:300,400:latin"]
             },
-            active: function () {
+            active: function() {
                 nextend.fontsLoadedActive()
             },
-            inactive: function () {
+            inactive: function() {
                 nextend.fontsLoadedActive()
             }
         };
@@ -136,12 +136,12 @@
             var _WebFontConfig = WebFontConfig;
             for (var k in WebFontConfig) {
                 if (k == 'active') {
-                    fontData.active = function () {
+                    fontData.active = function() {
                         nextend.fontsLoadedActive();
                         _WebFontConfig.active();
                     }
                 } else if (k == 'inactive') {
-                    fontData.inactive = function () {
+                    fontData.inactive = function() {
                         nextend.fontsLoadedActive();
                         _WebFontConfig.inactive();
                     }
@@ -169,18 +169,18 @@
     <script type="text/javascript" src="assets/plugins/slider/js/smartslider-simple-type-frontend.min.js"></script>
     <script type="text/javascript" src="assets/plugins/slider/js/nextend-webfontloader.min.js"></script>
     <script type="text/javascript">
-        N2R('documentReady', function ($) {
+        N2R('documentReady', function($) {
 
             nextend.fontsDeferred = $.Deferred();
             if (nextend.fontsLoaded) {
                 nextend.fontsDeferred.resolve();
             } else {
-                nextend.fontsLoadedActive = function () {
+                nextend.fontsLoadedActive = function() {
                     nextend.fontsLoaded = true;
                     nextend.fontsDeferred.resolve();
                 };
                 var intercalCounter = 0;
-                nextend.fontInterval = setInterval(function () {
+                nextend.fontInterval = setInterval(function() {
                     if (intercalCounter > 3 || document.documentElement.className.indexOf('wf-active') !==
                         -1) {
                         nextend.fontsLoadedActive();
@@ -230,33 +230,13 @@
                                     </a>
                                     <ul class="sub-menu">
                                         <li>
-                                            <a href="about.html">About</a>
+                                            <a href="#">About</a>
                                         </li>
                                         <li>
-                                            <a href="404.html">404</a>
+                                            <a href="#">FAQ</a>
                                         </li>
                                         <li>
-                                            <a href="faq.html">FAQ</a>
-                                        </li>
-                                        <li class="menu-item-has-children">
-                                            <a href="team.html">Team</a>
-                                            <ul class="sub-menu">
-                                                <li>
-                                                    <a href="single-team.html">Member profile</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="typography.html">Typography</a>
-                                        </li>
-                                        <li>
-                                            <a href="price.html">Pricing plans</a>
-                                        </li>
-                                        <li>
-                                            <a href="testimonials.html">Testimonials</a>
-                                        </li>
-										<li>
-                                            <a href="statistic.html">Statistic</a>
+                                            <a href="faq.html">Apply Here</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -266,19 +246,13 @@
                                     </a>
                                     <ul class="sub-menu">
                                         <li>
-                                            <a href="gallery-regular.html">Gallery Regular</a>
+                                            <a href="#">Prime</a>
                                         </li>
                                         <li>
-                                            <a href="gallery-masonry.html">Gallery Masonry</a>
+                                            <a href="angelsofmercy.html">Angels Of Mercy</a>
                                         </li>
                                         <li>
-                                            <a href="gallery-full.html">Gallery Fullwidth</a>
-                                        </li>
-                                        <li>
-                                            <a href="gallery-extended.html">Gallery Extended</a>
-                                        </li>
-                                        <li>
-                                            <a href="single-image.html">Single image</a>
+                                            <a href="#">Family</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -288,7 +262,7 @@
                                     </a>
                                     <ul class="sub-menu">
                                         <li>
-                                            <a href="single-game.html">Single game</a>
+                                            <a href="#">Single game</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -298,13 +272,13 @@
                                     </a>
                                     <ul class="sub-menu">
                                         <li>
-                                            <a href="blog-full.html">Blog Fullwidth</a>
+                                            <a href="#">Blog Fullwidth</a>
                                         </li>
                                         <li>
-                                            <a href="blog-left.html">Blog Left sidebar</a>
+                                            <a href="#">Blog Left sidebar</a>
                                         </li>
                                         <li>
-                                            <a href="blog-right.html">Blog Right sidebar</a>
+                                            <a href="#">Blog Right sidebar</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -1052,9 +1026,7 @@
         </style>
         <div id="n2-ss-4-align" class="n2-ss-align">
             <div class="n2-padding">
-                <div id="n2-ss-4" data-creator="Smart Slider 3" class="n2-ss-slider n2-ow n2-has-hover n2notransition n2-ss-load-fade " data-minFontSizedesktopPortrait="1"
-                    data-minFontSizedesktopLandscape="1" data-minFontSizetabletPortrait="1" data-minFontSizetabletLandscape="1"
-                    data-minFontSizemobilePortrait="1" data-minFontSizemobileLandscape="1" style="font-size: 16px;" data-fontsize="16">
+                <div id="n2-ss-4" data-creator="Smart Slider 3" class="n2-ss-slider n2-ow n2-has-hover n2notransition n2-ss-load-fade " data-minFontSizedesktopPortrait="1" data-minFontSizedesktopLandscape="1" data-minFontSizetabletPortrait="1" data-minFontSizetabletLandscape="1" data-minFontSizemobilePortrait="1" data-minFontSizemobileLandscape="1" style="font-size: 16px;" data-fontsize="16">
                     <div class="n2-ss-slider-1 n2-ss-swipe-element n2-ow" style="">
                         <div class="n2-ss-slider-2 n2-ow">
                             <div class="n2-ss-slider-3 n2-ow" style="">
@@ -1062,48 +1034,18 @@
                                 <div class="n2-ss-slide-backgrounds"></div>
                                 <div data-first="1" data-slide-duration="0" data-id="15" style="" class="n2-ss-slide n2-ss-canvas n2-ow  n2-ss-slide-15">
                                     <div class="n2-ss-slide-background n2-ow" data-mode="fill">
-                                        <img data-hash="7f12344252192edee35072e997e65114" data-desktop="assets/plugins/slider/images/B4M_ANIMATED.gif" data-blur="0"
-                                            data-opacity="100" data-x="50" data-y="50" src="assets/plugins/slider/images/B4M_ANIMATED.gif"
-                                            alt="" />
+                                        <img data-hash="7f12344252192edee35072e997e65114" data-desktop="assets/plugins/slider/images/B4M_ANIMATED.gif" data-blur="0" data-opacity="100" data-x="50" data-y="50" src="assets/plugins/slider/images/B4M_ANIMATED.gif" alt="" />
                                     </div>
                                     <div class="n2-ss-layers-container n2-ow" data-csstextalign="center" style="">
-                                        <div class="n2-ss-layer n2-ow" style="overflow:visible;" data-csstextalign="inherit" data-has-maxwidth="0" data-desktopportraitmaxwidth="0"
-                                            data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-pm="content"
-                                            data-desktopportraitpadding="140|*|10|*|10|*|10|*|px+" data-desktopportraitinneralign="inherit"
-                                            data-sstype="content" data-hasbackground="0" data-rotation="0" data-desktopportrait="1"
-                                            data-desktoplandscape="1" data-tabletportrait="1" data-tabletlandscape="1" data-mobileportrait="1"
-                                            data-mobilelandscape="1" data-adaptivefont="1" data-desktopportraitfontsize="100"
-                                            data-plugin="rendered">
+                                        <div class="n2-ss-layer n2-ow" style="overflow:visible;" data-csstextalign="inherit" data-has-maxwidth="0" data-desktopportraitmaxwidth="0" data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-pm="content" data-desktopportraitpadding="140|*|10|*|10|*|10|*|px+" data-desktopportraitinneralign="inherit" data-sstype="content" data-hasbackground="0" data-rotation="0" data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1" data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1" data-adaptivefont="1" data-desktopportraitfontsize="100" data-plugin="rendered">
                                             <div class="n2-ss-section-main-content n2-ss-layer-content n2-ow" style="padding:8.75em 0.625em 0.625em 0.625em ;" data-verticalalign="center">
-                                                <div class="n2-ss-layer n2-ow" style="margin:0em 0em 0em 0em ;overflow:visible;" data-pm="normal" data-desktopportraitmargin="0|*|0|*|0|*|0|*|px+"
-                                                    data-desktopportraitheight="0" data-has-maxwidth="0" data-desktopportraitmaxwidth="0"
-                                                    data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer"
-                                                    data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJcdTA0MTdcdTA0MzBcdTA0NDJcdTA0MzVcdTA0M2NcdTA0M2RcdTA0MzVcdTA0M2RcdTA0MzhcdTA0MzUgXHUwNDQxXHUwNDMyXHUwNDM1XHUwNDQwXHUwNDQ1XHUwNDQzIiwib3BhY2l0eSI6MCwieSI6NDAwfV19"
-                                                    data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1"
-                                                    data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1"
-                                                    data-adaptivefont="0" data-desktopportraitfontsize="100" data-tabletportraitfontsize="80"
-                                                    data-mobileportraitfontsize="50" data-plugin="rendered">
+                                                <div class="n2-ss-layer n2-ow" style="margin:0em 0em 0em 0em ;overflow:visible;" data-pm="normal" data-desktopportraitmargin="0|*|0|*|0|*|0|*|px+" data-desktopportraitheight="0" data-has-maxwidth="0" data-desktopportraitmaxwidth="0" data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer" data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJcdTA0MTdcdTA0MzBcdTA0NDJcdTA0MzVcdTA0M2NcdTA0M2RcdTA0MzVcdTA0M2RcdTA0MzhcdTA0MzUgXHUwNDQxXHUwNDMyXHUwNDM1XHUwNDQwXHUwNDQ1XHUwNDQzIiwib3BhY2l0eSI6MCwieSI6NDAwfV19" data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1" data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1" data-adaptivefont="0" data-desktopportraitfontsize="100" data-tabletportraitfontsize="80" data-mobileportraitfontsize="50" data-plugin="rendered">
                                                     <div id="n2-ss-4item1" class="n2-font-be0a516f76efd05e36733289aaf2a6de-hover   n2-ow" style="display:block;">Welcome to Gamesplay</div>
                                                 </div>
-                                                <div class="n2-ss-layer n2-ow" style="margin:0em 0em 0em 0em ;overflow:visible;" data-pm="normal" data-desktopportraitmargin="0|*|0|*|0|*|0|*|px+"
-                                                    data-desktopportraitheight="0" data-has-maxwidth="0" data-desktopportraitmaxwidth="0"
-                                                    data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer"
-                                                    data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJcdTA0MTdcdTA0MzBcdTA0NDJcdTA0MzVcdTA0M2NcdTA0M2RcdTA0MzVcdTA0M2RcdTA0MzhcdTA0MzUgXHUwNDQxXHUwNDNiXHUwNDM1XHUwNDMyXHUwNDMwIiwiZGVsYXkiOjAuNSwib3BhY2l0eSI6MCwieCI6NDAwfV19"
-                                                    data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1"
-                                                    data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1"
-                                                    data-adaptivefont="0" data-desktopportraitfontsize="100" data-tabletportraitfontsize="80"
-                                                    data-mobileportraitfontsize="50" data-plugin="rendered">
-                                                    <div id="n2-ss-4item2" class="n2-font-e5e826a3ba83ea69731d81df1c0fa84d-hover n2-style-01ddb7ca1f625e69d1a2381951aa5192-heading   n2-ow"
-                                                        style="display:block;">Online gaming site</div>
+                                                <div class="n2-ss-layer n2-ow" style="margin:0em 0em 0em 0em ;overflow:visible;" data-pm="normal" data-desktopportraitmargin="0|*|0|*|0|*|0|*|px+" data-desktopportraitheight="0" data-has-maxwidth="0" data-desktopportraitmaxwidth="0" data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer" data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJcdTA0MTdcdTA0MzBcdTA0NDJcdTA0MzVcdTA0M2NcdTA0M2RcdTA0MzVcdTA0M2RcdTA0MzhcdTA0MzUgXHUwNDQxXHUwNDNiXHUwNDM1XHUwNDMyXHUwNDMwIiwiZGVsYXkiOjAuNSwib3BhY2l0eSI6MCwieCI6NDAwfV19" data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1" data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1" data-adaptivefont="0" data-desktopportraitfontsize="100" data-tabletportraitfontsize="80" data-mobileportraitfontsize="50" data-plugin="rendered">
+                                                    <div id="n2-ss-4item2" class="n2-font-e5e826a3ba83ea69731d81df1c0fa84d-hover n2-style-01ddb7ca1f625e69d1a2381951aa5192-heading   n2-ow" style="display:block;">Online gaming site</div>
                                                 </div>
-                                                <div class="n2-ss-layer n2-ow" style="margin:2.5em 0em 0em 0em ;max-width: 955px;overflow:visible;" data-pm="normal" data-desktopportraitmargin="40|*|0|*|0|*|0|*|px+"
-                                                    data-desktopportraitheight="0" data-has-maxwidth="1" data-desktopportraitmaxwidth="955"
-                                                    data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer"
-                                                    data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJCbHVyIiwiZGVsYXkiOjAuOCwib3BhY2l0eSI6MCwibjJibHVyIjoxMH1dfQ=="
-                                                    data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1"
-                                                    data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1"
-                                                    data-adaptivefont="0" data-desktopportraitfontsize="100" data-tabletportraitfontsize="80"
-                                                    data-mobileportraitfontsize="90" data-plugin="rendered">
+                                                <div class="n2-ss-layer n2-ow" style="margin:2.5em 0em 0em 0em ;max-width: 955px;overflow:visible;" data-pm="normal" data-desktopportraitmargin="40|*|0|*|0|*|0|*|px+" data-desktopportraitheight="0" data-has-maxwidth="1" data-desktopportraitmaxwidth="955" data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer" data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJCbHVyIiwiZGVsYXkiOjAuOCwib3BhY2l0eSI6MCwibjJibHVyIjoxMH1dfQ==" data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1" data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1" data-adaptivefont="0" data-desktopportraitfontsize="100" data-tabletportraitfontsize="80" data-mobileportraitfontsize="90" data-plugin="rendered">
                                                     <div class="n2-ow n2-ow-all n2-ss-desktop n2-ss-mobile n2-ss-tablet">
                                                         <p class="n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph   n2-ow">Pork chop pastrami meatball, picanha salami capicola drumstick tri-tip
                                                             flank short loin strip steak prosciutto
@@ -1111,14 +1053,7 @@
                                                             ribs shank bresaola.</p>
                                                     </div>
                                                 </div>
-                                                <div class="n2-ss-layer n2-ow" style="margin:3.125em 0em 0em 0em ;overflow:visible;" data-pm="normal" data-desktopportraitmargin="50|*|0|*|0|*|0|*|px+"
-                                                    data-desktopportraitheight="0" data-has-maxwidth="0" data-desktopportraitmaxwidth="0"
-                                                    data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer"
-                                                    data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJcdTA0MTdcdTA0MzBcdTA0NDJcdTA0NDNcdTA0NDVcdTA0MzBcdTA0M2RcdTA0MzhcdTA0MzUgXHUwNDQxXHUwNDNkXHUwNDM4XHUwNDM3XHUwNDQzIiwiZGVsYXkiOjEsIm9wYWNpdHkiOjAsInkiOi00MDB9XX0="
-                                                    data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1"
-                                                    data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1"
-                                                    data-adaptivefont="0" data-desktopportraitfontsize="100" data-tabletportraitfontsize="80"
-                                                    data-mobileportraitfontsize="100" data-plugin="rendered">
+                                                <div class="n2-ss-layer n2-ow" style="margin:3.125em 0em 0em 0em ;overflow:visible;" data-pm="normal" data-desktopportraitmargin="50|*|0|*|0|*|0|*|px+" data-desktopportraitheight="0" data-has-maxwidth="0" data-desktopportraitmaxwidth="0" data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer" data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJcdTA0MTdcdTA0MzBcdTA0NDJcdTA0NDNcdTA0NDVcdTA0MzBcdTA0M2RcdTA0MzhcdTA0MzUgXHUwNDQxXHUwNDNkXHUwNDM4XHUwNDM3XHUwNDQzIiwiZGVsYXkiOjEsIm9wYWNpdHkiOjAsInkiOi00MDB9XX0=" data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1" data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1" data-adaptivefont="0" data-desktopportraitfontsize="100" data-tabletportraitfontsize="80" data-mobileportraitfontsize="100" data-plugin="rendered">
                                                     <div class="n2-ss-button-container n2-ow n2-font-06be61400c1a4b339e67534a8a262348-link  n2-ss-nowrap">
                                                         <a class="n2-style-588404275f372121297e39cfe0b03e24-heading  n2-ow " onclick="return false;" href="#">
                                                             <div>
@@ -1133,48 +1068,18 @@
                                 </div>
                                 <div data-slide-duration="0" data-id="16" style="" class="n2-ss-slide n2-ss-canvas n2-ow  n2-ss-slide-16">
                                     <div class="n2-ss-slide-background n2-ow" data-mode="fill">
-                                        <img data-hash="df538617dc01fb19a0bb4e642cc11f2d" data-desktop="assets/plugins/slider/images/B4M_ANIMATED.gif" data-blur="0"
-                                            data-opacity="100" data-x="50" data-y="50" src="assets/plugins/slider/images/B4M_ANIMATED.gif"
-                                            alt="" />
+                                        <img data-hash="df538617dc01fb19a0bb4e642cc11f2d" data-desktop="assets/plugins/slider/images/B4M_ANIMATED.gif" data-blur="0" data-opacity="100" data-x="50" data-y="50" src="assets/plugins/slider/images/B4M_ANIMATED.gif" alt="" />
                                     </div>
                                     <div class="n2-ss-layers-container n2-ow" data-csstextalign="center" style="">
-                                        <div class="n2-ss-layer n2-ow" style="overflow:visible;" data-csstextalign="inherit" data-has-maxwidth="0" data-desktopportraitmaxwidth="0"
-                                            data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-pm="content"
-                                            data-desktopportraitpadding="140|*|10|*|10|*|10|*|px+" data-desktopportraitinneralign="inherit"
-                                            data-sstype="content" data-hasbackground="0" data-rotation="0" data-desktopportrait="1"
-                                            data-desktoplandscape="1" data-tabletportrait="1" data-tabletlandscape="1" data-mobileportrait="1"
-                                            data-mobilelandscape="1" data-adaptivefont="1" data-desktopportraitfontsize="100"
-                                            data-plugin="rendered">
+                                        <div class="n2-ss-layer n2-ow" style="overflow:visible;" data-csstextalign="inherit" data-has-maxwidth="0" data-desktopportraitmaxwidth="0" data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-pm="content" data-desktopportraitpadding="140|*|10|*|10|*|10|*|px+" data-desktopportraitinneralign="inherit" data-sstype="content" data-hasbackground="0" data-rotation="0" data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1" data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1" data-adaptivefont="1" data-desktopportraitfontsize="100" data-plugin="rendered">
                                             <div class="n2-ss-section-main-content n2-ss-layer-content n2-ow" style="padding:8.75em 0.625em 0.625em 0.625em ;" data-verticalalign="center">
-                                                <div class="n2-ss-layer n2-ow" style="margin:0em 0em 0em 0em ;overflow:visible;" data-pm="normal" data-desktopportraitmargin="0|*|0|*|0|*|0|*|px+"
-                                                    data-desktopportraitheight="0" data-has-maxwidth="0" data-desktopportraitmaxwidth="0"
-                                                    data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer"
-                                                    data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJcdTA0MTdcdTA0MzBcdTA0NDJcdTA0MzVcdTA0M2NcdTA0M2RcdTA0MzVcdTA0M2RcdTA0MzhcdTA0MzUgXHUwNDQxXHUwNDMyXHUwNDM1XHUwNDQwXHUwNDQ1XHUwNDQzIiwib3BhY2l0eSI6MCwieSI6NDAwfV19"
-                                                    data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1"
-                                                    data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1"
-                                                    data-adaptivefont="0" data-desktopportraitfontsize="100" data-tabletportraitfontsize="80"
-                                                    data-mobileportraitfontsize="50" data-plugin="rendered">
+                                                <div class="n2-ss-layer n2-ow" style="margin:0em 0em 0em 0em ;overflow:visible;" data-pm="normal" data-desktopportraitmargin="0|*|0|*|0|*|0|*|px+" data-desktopportraitheight="0" data-has-maxwidth="0" data-desktopportraitmaxwidth="0" data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer" data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJcdTA0MTdcdTA0MzBcdTA0NDJcdTA0MzVcdTA0M2NcdTA0M2RcdTA0MzVcdTA0M2RcdTA0MzhcdTA0MzUgXHUwNDQxXHUwNDMyXHUwNDM1XHUwNDQwXHUwNDQ1XHUwNDQzIiwib3BhY2l0eSI6MCwieSI6NDAwfV19" data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1" data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1" data-adaptivefont="0" data-desktopportraitfontsize="100" data-tabletportraitfontsize="80" data-mobileportraitfontsize="50" data-plugin="rendered">
                                                     <div id="n2-ss-4item5" class="n2-font-be0a516f76efd05e36733289aaf2a6de-hover   n2-ow" style="display:block;">Mobile Gaming Clan</div>
                                                 </div>
-                                                <div class="n2-ss-layer n2-ow" style="margin:0em 0em 0em 0em ;overflow:visible;" data-pm="normal" data-desktopportraitmargin="0|*|0|*|0|*|0|*|px+"
-                                                    data-desktopportraitheight="0" data-has-maxwidth="0" data-desktopportraitmaxwidth="0"
-                                                    data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer"
-                                                    data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJcdTA0MTdcdTA0MzBcdTA0NDJcdTA0MzVcdTA0M2NcdTA0M2RcdTA0MzVcdTA0M2RcdTA0MzhcdTA0MzUgXHUwNDQxXHUwNDNiXHUwNDM1XHUwNDMyXHUwNDMwIiwiZGVsYXkiOjAuNSwib3BhY2l0eSI6MCwieCI6NDAwfV19"
-                                                    data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1"
-                                                    data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1"
-                                                    data-adaptivefont="0" data-desktopportraitfontsize="100" data-tabletportraitfontsize="80"
-                                                    data-mobileportraitfontsize="50" data-plugin="rendered">
-                                                    <div id="n2-ss-4item6" class="n2-font-e5e826a3ba83ea69731d81df1c0fa84d-hover n2-style-01ddb7ca1f625e69d1a2381951aa5192-heading   n2-ow"
-                                                        style="display:block;">Beg For Mercy</div>
+                                                <div class="n2-ss-layer n2-ow" style="margin:0em 0em 0em 0em ;overflow:visible;" data-pm="normal" data-desktopportraitmargin="0|*|0|*|0|*|0|*|px+" data-desktopportraitheight="0" data-has-maxwidth="0" data-desktopportraitmaxwidth="0" data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer" data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJcdTA0MTdcdTA0MzBcdTA0NDJcdTA0MzVcdTA0M2NcdTA0M2RcdTA0MzVcdTA0M2RcdTA0MzhcdTA0MzUgXHUwNDQxXHUwNDNiXHUwNDM1XHUwNDMyXHUwNDMwIiwiZGVsYXkiOjAuNSwib3BhY2l0eSI6MCwieCI6NDAwfV19" data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1" data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1" data-adaptivefont="0" data-desktopportraitfontsize="100" data-tabletportraitfontsize="80" data-mobileportraitfontsize="50" data-plugin="rendered">
+                                                    <div id="n2-ss-4item6" class="n2-font-e5e826a3ba83ea69731d81df1c0fa84d-hover n2-style-01ddb7ca1f625e69d1a2381951aa5192-heading   n2-ow" style="display:block;">Beg For Mercy</div>
                                                 </div>
-                                                <div class="n2-ss-layer n2-ow" style="margin:2.5em 0em 0em 0em ;max-width: 955px;overflow:visible;" data-pm="normal" data-desktopportraitmargin="40|*|0|*|0|*|0|*|px+"
-                                                    data-desktopportraitheight="0" data-has-maxwidth="1" data-desktopportraitmaxwidth="955"
-                                                    data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer"
-                                                    data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJCbHVyIiwiZGVsYXkiOjAuOCwib3BhY2l0eSI6MCwibjJibHVyIjoxMH1dfQ=="
-                                                    data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1"
-                                                    data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1"
-                                                    data-adaptivefont="0" data-desktopportraitfontsize="100" data-tabletportraitfontsize="80"
-                                                    data-mobileportraitfontsize="90" data-plugin="rendered">
+                                                <div class="n2-ss-layer n2-ow" style="margin:2.5em 0em 0em 0em ;max-width: 955px;overflow:visible;" data-pm="normal" data-desktopportraitmargin="40|*|0|*|0|*|0|*|px+" data-desktopportraitheight="0" data-has-maxwidth="1" data-desktopportraitmaxwidth="955" data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer" data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJCbHVyIiwiZGVsYXkiOjAuOCwib3BhY2l0eSI6MCwibjJibHVyIjoxMH1dfQ==" data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1" data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1" data-adaptivefont="0" data-desktopportraitfontsize="100" data-tabletportraitfontsize="80" data-mobileportraitfontsize="90" data-plugin="rendered">
                                                     <div class="n2-ow n2-ow-all n2-ss-desktop n2-ss-mobile n2-ss-tablet">
                                                         <p class="n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph   n2-ow">Rump biltong buffalo kielbasa bresaola strip steak frankfurter bacon
                                                             tenderloin brisket picanha chuck meatball.
@@ -1183,14 +1088,7 @@
                                                         </p>
                                                     </div>
                                                 </div>
-                                                <div class="n2-ss-layer n2-ow" style="margin:3.125em 0em 0em 0em ;overflow:visible;" data-pm="normal" data-desktopportraitmargin="50|*|0|*|0|*|0|*|px+"
-                                                    data-desktopportraitheight="0" data-has-maxwidth="0" data-desktopportraitmaxwidth="0"
-                                                    data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer"
-                                                    data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJcdTA0MTdcdTA0MzBcdTA0NDJcdTA0NDNcdTA0NDVcdTA0MzBcdTA0M2RcdTA0MzhcdTA0MzUgXHUwNDQxXHUwNDNkXHUwNDM4XHUwNDM3XHUwNDQzIiwiZGVsYXkiOjEsIm9wYWNpdHkiOjAsInkiOi00MDB9XX0="
-                                                    data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1"
-                                                    data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1"
-                                                    data-adaptivefont="0" data-desktopportraitfontsize="100" data-tabletportraitfontsize="80"
-                                                    data-mobileportraitfontsize="100" data-plugin="rendered">
+                                                <div class="n2-ss-layer n2-ow" style="margin:3.125em 0em 0em 0em ;overflow:visible;" data-pm="normal" data-desktopportraitmargin="50|*|0|*|0|*|0|*|px+" data-desktopportraitheight="0" data-has-maxwidth="0" data-desktopportraitmaxwidth="0" data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer" data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJcdTA0MTdcdTA0MzBcdTA0NDJcdTA0NDNcdTA0NDVcdTA0MzBcdTA0M2RcdTA0MzhcdTA0MzUgXHUwNDQxXHUwNDNkXHUwNDM4XHUwNDM3XHUwNDQzIiwiZGVsYXkiOjEsIm9wYWNpdHkiOjAsInkiOi00MDB9XX0=" data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1" data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1" data-adaptivefont="0" data-desktopportraitfontsize="100" data-tabletportraitfontsize="80" data-mobileportraitfontsize="100" data-plugin="rendered">
                                                     <div class="n2-ss-button-container n2-ow n2-font-06be61400c1a4b339e67534a8a262348-link  n2-ss-nowrap">
                                                         <a class="n2-style-588404275f372121297e39cfe0b03e24-heading  n2-ow " onclick="return false;" href="#">
                                                             <div>
@@ -1205,48 +1103,18 @@
                                 </div>
                                 <div data-slide-duration="0" data-id="17" style="" class="n2-ss-slide n2-ss-canvas n2-ow  n2-ss-slide-17">
                                     <div class="n2-ss-slide-background n2-ow" data-mode="fill">
-                                        <img data-hash="daeb09696afe190d4a842f033c14d69b" data-desktop="assets/plugins/slider/images/B4M_ANIMATED.gif" data-blur="0"
-                                            data-opacity="100" data-x="50" data-y="50" src="assets/plugins/slider/images/B4M_ANIMATED.gif"
-                                            alt="" />
+                                        <img data-hash="daeb09696afe190d4a842f033c14d69b" data-desktop="assets/plugins/slider/images/B4M_ANIMATED.gif" data-blur="0" data-opacity="100" data-x="50" data-y="50" src="assets/plugins/slider/images/B4M_ANIMATED.gif" alt="" />
                                     </div>
                                     <div class="n2-ss-layers-container n2-ow" data-csstextalign="center" style="">
-                                        <div class="n2-ss-layer n2-ow" style="overflow:visible;" data-csstextalign="inherit" data-has-maxwidth="0" data-desktopportraitmaxwidth="0"
-                                            data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-pm="content"
-                                            data-desktopportraitpadding="140|*|10|*|10|*|10|*|px+" data-desktopportraitinneralign="inherit"
-                                            data-sstype="content" data-hasbackground="0" data-rotation="0" data-desktopportrait="1"
-                                            data-desktoplandscape="1" data-tabletportrait="1" data-tabletlandscape="1" data-mobileportrait="1"
-                                            data-mobilelandscape="1" data-adaptivefont="1" data-desktopportraitfontsize="100"
-                                            data-plugin="rendered">
+                                        <div class="n2-ss-layer n2-ow" style="overflow:visible;" data-csstextalign="inherit" data-has-maxwidth="0" data-desktopportraitmaxwidth="0" data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-pm="content" data-desktopportraitpadding="140|*|10|*|10|*|10|*|px+" data-desktopportraitinneralign="inherit" data-sstype="content" data-hasbackground="0" data-rotation="0" data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1" data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1" data-adaptivefont="1" data-desktopportraitfontsize="100" data-plugin="rendered">
                                             <div class="n2-ss-section-main-content n2-ss-layer-content n2-ow" style="padding:8.75em 0.625em 0.625em 0.625em ;" data-verticalalign="center">
-                                                <div class="n2-ss-layer n2-ow" style="margin:0em 0em 0em 0em ;overflow:visible;" data-pm="normal" data-desktopportraitmargin="0|*|0|*|0|*|0|*|px+"
-                                                    data-desktopportraitheight="0" data-has-maxwidth="0" data-desktopportraitmaxwidth="0"
-                                                    data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer"
-                                                    data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJcdTA0MTdcdTA0MzBcdTA0NDJcdTA0MzVcdTA0M2NcdTA0M2RcdTA0MzVcdTA0M2RcdTA0MzhcdTA0MzUgXHUwNDQxXHUwNDMyXHUwNDM1XHUwNDQwXHUwNDQ1XHUwNDQzIiwib3BhY2l0eSI6MCwieSI6NDAwfV19"
-                                                    data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1"
-                                                    data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1"
-                                                    data-adaptivefont="0" data-desktopportraitfontsize="100" data-tabletportraitfontsize="80"
-                                                    data-mobileportraitfontsize="50" data-plugin="rendered">
+                                                <div class="n2-ss-layer n2-ow" style="margin:0em 0em 0em 0em ;overflow:visible;" data-pm="normal" data-desktopportraitmargin="0|*|0|*|0|*|0|*|px+" data-desktopportraitheight="0" data-has-maxwidth="0" data-desktopportraitmaxwidth="0" data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer" data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJcdTA0MTdcdTA0MzBcdTA0NDJcdTA0MzVcdTA0M2NcdTA0M2RcdTA0MzVcdTA0M2RcdTA0MzhcdTA0MzUgXHUwNDQxXHUwNDMyXHUwNDM1XHUwNDQwXHUwNDQ1XHUwNDQzIiwib3BhY2l0eSI6MCwieSI6NDAwfV19" data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1" data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1" data-adaptivefont="0" data-desktopportraitfontsize="100" data-tabletportraitfontsize="80" data-mobileportraitfontsize="50" data-plugin="rendered">
                                                     <div id="n2-ss-4item9" class="n2-font-be0a516f76efd05e36733289aaf2a6de-hover   n2-ow" style="display:block;">All new games are</div>
                                                 </div>
-                                                <div class="n2-ss-layer n2-ow" style="margin:0em 0em 0em 0em ;overflow:visible;" data-pm="normal" data-desktopportraitmargin="0|*|0|*|0|*|0|*|px+"
-                                                    data-desktopportraitheight="0" data-has-maxwidth="0" data-desktopportraitmaxwidth="0"
-                                                    data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer"
-                                                    data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJcdTA0MTdcdTA0MzBcdTA0NDJcdTA0MzVcdTA0M2NcdTA0M2RcdTA0MzVcdTA0M2RcdTA0MzhcdTA0MzUgXHUwNDQxXHUwNDNiXHUwNDM1XHUwNDMyXHUwNDMwIiwiZGVsYXkiOjAuNSwib3BhY2l0eSI6MCwieCI6NDAwfV19"
-                                                    data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1"
-                                                    data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1"
-                                                    data-adaptivefont="0" data-desktopportraitfontsize="100" data-tabletportraitfontsize="80"
-                                                    data-mobileportraitfontsize="50" data-plugin="rendered">
-                                                    <div id="n2-ss-4item10" class="n2-font-e5e826a3ba83ea69731d81df1c0fa84d-hover n2-style-01ddb7ca1f625e69d1a2381951aa5192-heading   n2-ow"
-                                                        style="display:block;">Only in Gamesplay</div>
+                                                <div class="n2-ss-layer n2-ow" style="margin:0em 0em 0em 0em ;overflow:visible;" data-pm="normal" data-desktopportraitmargin="0|*|0|*|0|*|0|*|px+" data-desktopportraitheight="0" data-has-maxwidth="0" data-desktopportraitmaxwidth="0" data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer" data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJcdTA0MTdcdTA0MzBcdTA0NDJcdTA0MzVcdTA0M2NcdTA0M2RcdTA0MzVcdTA0M2RcdTA0MzhcdTA0MzUgXHUwNDQxXHUwNDNiXHUwNDM1XHUwNDMyXHUwNDMwIiwiZGVsYXkiOjAuNSwib3BhY2l0eSI6MCwieCI6NDAwfV19" data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1" data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1" data-adaptivefont="0" data-desktopportraitfontsize="100" data-tabletportraitfontsize="80" data-mobileportraitfontsize="50" data-plugin="rendered">
+                                                    <div id="n2-ss-4item10" class="n2-font-e5e826a3ba83ea69731d81df1c0fa84d-hover n2-style-01ddb7ca1f625e69d1a2381951aa5192-heading   n2-ow" style="display:block;">Only in Gamesplay</div>
                                                 </div>
-                                                <div class="n2-ss-layer n2-ow" style="margin:2.5em 0em 0em 0em ;max-width: 955px;overflow:visible;" data-pm="normal" data-desktopportraitmargin="40|*|0|*|0|*|0|*|px+"
-                                                    data-desktopportraitheight="0" data-has-maxwidth="1" data-desktopportraitmaxwidth="955"
-                                                    data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer"
-                                                    data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJCbHVyIiwiZGVsYXkiOjAuOCwib3BhY2l0eSI6MCwibjJibHVyIjoxMH1dfQ=="
-                                                    data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1"
-                                                    data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1"
-                                                    data-adaptivefont="0" data-desktopportraitfontsize="100" data-tabletportraitfontsize="80"
-                                                    data-mobileportraitfontsize="90" data-plugin="rendered">
+                                                <div class="n2-ss-layer n2-ow" style="margin:2.5em 0em 0em 0em ;max-width: 955px;overflow:visible;" data-pm="normal" data-desktopportraitmargin="40|*|0|*|0|*|0|*|px+" data-desktopportraitheight="0" data-has-maxwidth="1" data-desktopportraitmaxwidth="955" data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer" data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJCbHVyIiwiZGVsYXkiOjAuOCwib3BhY2l0eSI6MCwibjJibHVyIjoxMH1dfQ==" data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1" data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1" data-adaptivefont="0" data-desktopportraitfontsize="100" data-tabletportraitfontsize="80" data-mobileportraitfontsize="90" data-plugin="rendered">
                                                     <div class="n2-ow n2-ow-all n2-ss-desktop n2-ss-mobile n2-ss-tablet">
                                                         <p class="n2-font-7753338b51c1a1442e4b2825494fb15e-paragraph   n2-ow">Spare ribs venison swine tenderloin flank, ribeye pastrami jowl kielbasa
                                                             ham tongue meatloaf.
@@ -1254,14 +1122,7 @@
                                                         </p>
                                                     </div>
                                                 </div>
-                                                <div class="n2-ss-layer n2-ow" style="margin:3.125em 0em 0em 0em ;overflow:visible;" data-pm="normal" data-desktopportraitmargin="50|*|0|*|0|*|0|*|px+"
-                                                    data-desktopportraitheight="0" data-has-maxwidth="0" data-desktopportraitmaxwidth="0"
-                                                    data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer"
-                                                    data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJcdTA0MTdcdTA0MzBcdTA0NDJcdTA0NDNcdTA0NDVcdTA0MzBcdTA0M2RcdTA0MzhcdTA0MzUgXHUwNDQxXHUwNDNkXHUwNDM4XHUwNDM3XHUwNDQzIiwiZGVsYXkiOjEsIm9wYWNpdHkiOjAsInkiOi00MDB9XX0="
-                                                    data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1"
-                                                    data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1"
-                                                    data-adaptivefont="0" data-desktopportraitfontsize="100" data-tabletportraitfontsize="80"
-                                                    data-mobileportraitfontsize="100" data-plugin="rendered">
+                                                <div class="n2-ss-layer n2-ow" style="margin:3.125em 0em 0em 0em ;overflow:visible;" data-pm="normal" data-desktopportraitmargin="50|*|0|*|0|*|0|*|px+" data-desktopportraitheight="0" data-has-maxwidth="0" data-desktopportraitmaxwidth="0" data-cssselfalign="inherit" data-desktopportraitselfalign="inherit" data-sstype="layer" data-rotation="0" data-animations="eyJzcGVjaWFsWmVybyI6MCwiaW4iOlt7Im5hbWUiOiJcdTA0MTdcdTA0MzBcdTA0NDJcdTA0NDNcdTA0NDVcdTA0MzBcdTA0M2RcdTA0MzhcdTA0MzUgXHUwNDQxXHUwNDNkXHUwNDM4XHUwNDM3XHUwNDQzIiwiZGVsYXkiOjEsIm9wYWNpdHkiOjAsInkiOi00MDB9XX0=" data-desktopportrait="1" data-desktoplandscape="1" data-tabletportrait="1" data-tabletlandscape="1" data-mobileportrait="1" data-mobilelandscape="1" data-adaptivefont="0" data-desktopportraitfontsize="100" data-tabletportraitfontsize="80" data-mobileportraitfontsize="100" data-plugin="rendered">
                                                     <div class="n2-ss-button-container n2-ow n2-font-06be61400c1a4b339e67534a8a262348-link  n2-ss-nowrap">
                                                         <a class="n2-style-588404275f372121297e39cfe0b03e24-heading  n2-ow " onclick="return false;" href="#">
                                                             <div>
@@ -1276,8 +1137,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div data-ssleft="0+100" data-sstop="height/2-bulletheight/2" data-offset="100" class="n2-ss-widget n2-ss-widget-display-desktop n2-ss-widget-display-tablet n2-ss-widget-display-mobile  n2-flex n2-ss-control-bullet n2-ss-control-bullet-vertical"
-                            style="position: absolute;">
+                        <div data-ssleft="0+100" data-sstop="height/2-bulletheight/2" data-offset="100" class="n2-ss-widget n2-ss-widget-display-desktop n2-ss-widget-display-tablet n2-ss-widget-display-mobile  n2-flex n2-ss-control-bullet n2-ss-control-bullet-vertical" style="position: absolute;">
                             <div class="n2-style-3e702635329eba6b6b98a2cfe62c4664-simple  nextend-bullet-bar n2-ow n2-bar-justify-content-center">
                                 <div class="n2-ow n2-style-2f5b33e7e6c0fd4c646594fe712ed299-dot n2-font-7b5c9760d048f32382e5cebedacdf830-dot " tabindex="0">01</div>
                                 <div class="n2-ow n2-style-2f5b33e7e6c0fd4c646594fe712ed299-dot n2-font-7b5c9760d048f32382e5cebedacdf830-dot " tabindex="0">02</div>
@@ -1299,7 +1159,7 @@
         <script type="text/javascript">
             N2R(["nextend-frontend", "smartslider-frontend", "nextend-gsap", "nextend-webfontloader",
                 "smartslider-simple-type-frontend"
-            ], function () {
+            ], function() {
                 new N2Classes.SmartSliderSimple('#n2-ss-4', {
                     "admin": false,
                     "translate3d": 1,
@@ -1475,8 +1335,7 @@
             });
         </script>
         <div id="n2-ss-4-placeholder" style="position: relative;z-index:2;color:RGBA(0,0,0,0);max-height:3000px;">
-            <img style="width: 100%; max-width:3000px; display: block;" class="n2-ow" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMCIgd2lkdGg9IjEyMDAiIGhlaWdodD0iNTAwIiA+PC9zdmc+"
-                alt="Slider" />
+            <img style="width: 100%; max-width:3000px; display: block;" class="n2-ow" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMCIgd2lkdGg9IjEyMDAiIGhlaWdodD0iNTAwIiA+PC9zdmc+" alt="Slider" />
         </div>
         <div class="sl-social bg-white">
             <a href="#" class="social facebook">
@@ -1535,7 +1394,7 @@
                                         </div>
                                     </div>
                                 </a>
-                            </li>                       
+                            </li>
                         </ul>
                     </div>
                     <div class="tab-content relative mt90">
@@ -1765,7 +1624,7 @@
                     </div>
                     <div class="title-description mt30 fweight-300 text-center">
                         General news about our community below, such as announcements news and more!
-                        <br/> See Below:
+                        <br /> See Below:
                     </div>
                 </div>
             </div>
@@ -1950,14 +1809,13 @@
                                         Most popular streams
                                     </div>
                                 </a>
-                            </li>                   
+                            </li>
                         </ul>
                     </div>
                     <div class="tab-content stream-bl relative">
                         <div class="tab-pane fade active in text-left clearfix" id="stream-1">
                             <div class="left-col col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                <div class="video-bl equal-height" data-vide-bg="mp4: http://denysthemes.com/html/riliant/assets/video/earth.mp4, webm: http://denysthemes.com/html/riliant/assets/video/earth.webm, ogv: http://denysthemes.com/html/riliant/assets/video/earth.ogv, poster: assets/images/585x550.jpg"
-                                    data-vide-options="className: 'video-main', posterType: jpg, loop: false, muted: false, position: center center, autoplay: false">
+                                <div class="video-bl equal-height" data-vide-bg="mp4: http://denysthemes.com/html/riliant/assets/video/earth.mp4, webm: http://denysthemes.com/html/riliant/assets/video/earth.webm, ogv: http://denysthemes.com/html/riliant/assets/video/earth.ogv, poster: assets/images/585x550.jpg" data-vide-options="className: 'video-main', posterType: jpg, loop: false, muted: false, position: center center, autoplay: false">
                                     <div class="buttonbar mt75">
                                         <div id="play" class="play-show play relative fsize-24 inline-block">
                                             <div class="pp-wrapper">
@@ -2127,7 +1985,7 @@
                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeInLeft" data-wow-duration="2s">
                         <div class="item standart text-center">
                             <div class="ptb30 fsize-24 fweight-700 font-agency uppercase color-white">
-                                B4M Family 
+                                B4M Family
                             </div>
                             <div class="current-bl color-white pt25 pb20">
                                 <div class="font-agency fweight-700 lheight-30">
@@ -2136,7 +1994,7 @@
                                     <span class="fsize-24"></span>
                                 </div>
                                 <div class="fsize-14 uppercase fweight-700">
-                                   Now Accepting
+                                    Now Accepting
                                 </div>
                             </div>
                             <div class="price-content equal-height">
@@ -2301,7 +2159,7 @@
     </section>
     <!-- FAQ SECTION END -->
     <!-- REGISTER SECTION START -->
-   
+
     <!-- REGISTER SECTION END -->
     <!-- FOOTER START -->
     <footer class="footer">
@@ -2388,7 +2246,7 @@
     <!-- FOOTER END -->
     <a href="#" id="toTop" class="color-white">
         <i class="fa fa-angle-up fsize-14" aria-hidden="true"></i>
-	</a>
+    </a>
     <!-- Scripts -->
     <script src="assets/js/jquery-3.3.1.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
