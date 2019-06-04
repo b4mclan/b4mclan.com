@@ -116,7 +116,7 @@
   font-size: 24px; }
 
 .fsize-28 {
-  font-size: 28px; }
+  font-size: 0px; }
 
 .fsize-30 {
   font-size: 30px; }
@@ -614,7 +614,7 @@ img {
 
 .page-name {
   padding: 235px 0 100px 0;
-  background-image: url("../images/page-name.jpg");
+  background-image: url("../images/aomfilter.jpg");
   background-repeat: no-repeat;
   background-size: auto 120%; }
   .page-name .page-title {
@@ -2015,7 +2015,7 @@ footer.footer {
     top: 0;
     bottom: 0;
     opacity: 0.3;
-    background-image: url("../images/footer-bg.jpg");
+    background-image: url("../images/b4myoutube.jpg");
     background-repeat: no-repeat;
     background-size: cover; }
   footer.footer .footer-menu {
