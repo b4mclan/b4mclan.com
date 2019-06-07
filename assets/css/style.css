@@ -789,13 +789,6 @@ img {
     transition: all 0.3s ease-out;
 }
 
-.page-name-aom {
-    padding: 235px 0 100px 0;
-    background-image: url("../images/aomfilter.jpg");
-    background-repeat: no-repeat;
-    background-size: auto 120%;
-}
-
 .page-name {
     padding: 235px 0 100px 0;
     background-image: url("../images/b4mbanner.png");
@@ -842,6 +835,54 @@ img {
     padding: 0 12.5px;
     text-shadow: 1px 1px #868f9e;
 }
+
+.page-name-aom {
+    padding: 235px 0 100px 0;
+    background-image: url("../images/aomfilter.jpg");
+    background-repeat: no-repeat;
+    background-size: auto 120%;
+}
+
+.page-name-aom .page-title {
+    color: #fff;
+    font-family: "Agency FB";
+    font-size: 48px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 2px 2px #868f9e;
+}
+
+.page-name-aom .breadcrumbs {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.page-name-aom .breadcrumbs a {
+    display: inline-block;
+    padding: 0 12.5px;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 2px 1px #868f9e;
+
+    transition: all 0.3s ease-out;
+}
+
+.page-name-aom .breadcrumbs a:hover {
+    color: #3dd0d8;
+    transition: all 0.3s ease-out;
+    text-shadow: 2px 2px #868f9e;
+
+}
+
+.page-name-aom .breadcrumbs span {
+    text-transform: uppercase;
+    color: #3dd0d8;
+    padding: 0 12.5px;
+    text-shadow: 1px 1px #868f9e;
+}
+
 
 ul.list-1 {
     line-height: 30px;
