@@ -789,9 +789,16 @@ img {
     transition: all 0.3s ease-out;
 }
 
-.page-name {
+.page-name-aom {
     padding: 235px 0 100px 0;
     background-image: url("../images/aomfilter.jpg");
+    background-repeat: no-repeat;
+    background-size: auto 120%;
+}
+
+.page-name {
+    padding: 235px 0 100px 0;
+    background-image: url("../images/b4mbanner.png");
     background-repeat: no-repeat;
     background-size: auto 120%;
 }
